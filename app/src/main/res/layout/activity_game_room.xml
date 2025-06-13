@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- 1. Иконка выхода в левом верхнем углу -->
+    <ImageButton
+        android:id="@+id/returnBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_back_btn"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- 2. Текст "Мемы" справа от иконки -->
+
+    <!-- 3. Область для вывода текста -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мемы"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/returnBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toEndOf="@id/returnBtn"
+        app:layout_constraintTop_toTopOf="@id/returnBtn"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvPlayerMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:text="Выбранный текст игрока будет здесь"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/returnBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 4. Игровая зона (центр экрана) -->
+    <RelativeLayout
+        android:id="@+id/gameZone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/tvPlayerMessage"
+        app:layout_constraintBottom_toTopOf="@id/playerHand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <!-- Круглый стол -->
+        <View
+            android:id="@+id/table"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_round_table"/>
+
+        <!-- Левая колода карт - теперь ближе к центру -->
+
+        <!-- Правая колода карт - теперь ближе к центру -->
+
+        <!-- Игровые места вокруг стола (6 позиций) -->
+        <!-- Позиция 12 часов -->
+        <View
+            android:id="@+id/leftDeck"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/seat12"
+            android:layout_alignEnd="@+id/table"
+            android:layout_marginTop="81dp"
+            android:layout_marginEnd="154dp"
+            android:background="@drawable/bg_card_deck" />
+
+        <View
+            android:id="@+id/rightDeck"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_alignStart="@+id/table"
+            android:layout_alignTop="@+id/table"
+            android:layout_marginStart="157dp"
+            android:layout_marginTop="92dp"
+            android:background="@drawable/bg_card_deck" />
+
+        <View
+            android:id="@+id/seat12"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_player_seat"/>
+
+        <!-- Позиция 2 часа -->
+
+        <!-- Позиция 4 часа -->
+        <View
+            android:id="@+id/seat2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignStart="@+id/table"
+            android:layout_alignTop="@+id/table"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="-1dp"
+            android:background="@drawable/bg_player_seat" />
+
+        <!-- Позиция 6 часов -->
+
+        <View
+            android:id="@+id/seat4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignStart="@+id/table"
+            android:layout_alignTop="@+id/table"
+            android:layout_marginStart="189dp"
+            android:layout_marginTop="166dp"
+            android:background="@drawable/bg_player_seat" />
+
+        <View
+            android:id="@+id/seat6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_player_seat"/>
+
+        <!-- Позиция 8 часа -->
+
+        <!-- Позиция 10 часа -->
+
+        <View
+            android:id="@+id/seat8"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignTop="@+id/table"
+            android:layout_alignEnd="@+id/table"
+            android:layout_marginTop="166dp"
+            android:layout_marginEnd="190dp"
+            android:background="@drawable/bg_player_seat" />
+
+        <View
+            android:id="@+id/seat10"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignTop="@+id/table"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/bg_player_seat" />
+    </RelativeLayout>
+
+    <!-- 6. Рука игрока (6 карт) -->
+    <LinearLayout
+        android:id="@+id/playerHand"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Карты будут добавляться динамически -->
+        <include layout="@layout/card_template" />
+
+        <include layout="@layout/card_template" />
+
+        <include layout="@layout/card_template" />
+
+        <include layout="@layout/card_template" />
+
+        <include layout="@layout/card_template" />
+
+        <include layout="@layout/card_template" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

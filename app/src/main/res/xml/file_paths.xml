@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Доступ к внешнему хранилищу -->
+    <external-path name="external_files" path="."/>
+
+    <!-- Доступ к кешу приложения -->
+    <cache-path name="cache_files" path="."/>
+
+    <!-- Доступ к файлам внутри приложения -->
+    <files-path name="internal_files" path="."/>
+
+    <!-- Для Android 11+ (Scoped Storage) -->
+    <external-files-path name="my_images" path="Pictures" />
+</paths>
